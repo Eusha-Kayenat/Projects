@@ -7,7 +7,7 @@
 
 ## 📌 Project Overview
 
-Animal welfare activities—such as pet adoption, fundraising, and community management—are often fragmented across different platforms. **Petverse** consolidates these workflows into one unified web application powered by a robust **MySQL** relational database and a **Node.js/Express** backend.
+Animal welfare activities—such as pet adoption, fundraising, and community management—are often fragmented across different platforms. **Petverse** consolidates these workflows into one unified web application powered by a robust **MySQL** relational database and a **Node.js / Express** backend.
 
 The platform highlights advanced database engineering concepts, including supertype-subtype relational inheritance, full 3NF normalization, transactional integrity for monetary contributions, and efficient query optimization.
 
@@ -15,7 +15,7 @@ The platform highlights advanced database engineering concepts, including supert
 
 ## 🌟 Key Features & Architecture
 
-### 💳 Donation & Campaign Management *(My Primary Contribution)*
+### 💳 Donation & Campaign Management *(Primary Focus)*
 * **Time-Bound Campaigns:** Dynamic calculation of remaining days and active status at the query level.
 * **Real-Time Fund Tracking:** Instant metrics for total amount raised, financial targets, and percentage funded.
 * **Transactional Integrity:** SQL transactions (`START TRANSACTION`, `COMMIT`, `ROLLBACK`) ensure user balance deductions and campaign aggregate updates remain consistent—even under concurrent operations.
