@@ -1,0 +1,12 @@
+𝐏𝐞𝐭𝐯𝐞𝐫𝐬𝐞, a full-stack Animal Welfare & Adoption Platform built for our CSE370 (Database Systems) project at BRAC University.
+The idea was simple: animal adoption, donations, and community moderation are usually scattered across different platforms. 𝐏𝐞𝐭𝐯𝐞𝐫𝐬𝐞 brings them into one secure ecosystem, built with Node.js, Express, and MySQL, with JWT + bcrypt authentication and a relational schema that models real supertype-subtype relationships (Accounts → Users/Admins).
+My focus was on the donation system:
+ 🔹 Time-bound donation campaigns with auto-calculated days-remaining logic
+ 🔹 Real-time fund tracking: raised amount, target, and % funded
+ 🔹 SQL transactions to keep balance deduction and campaign totals consistent even under concurrent donations
+Beyond my piece, the team built out a lot I'm proud to have shipped alongside:
+ 🔹 Admin moderation + keyword-based post search 
+ 🔹 Dynamic animal-type filtering + a personal wishlist system 
+We also took the schema all the way to 3NF and mapped the full ER/EER model before writing a line of backend code, a good reminder that the database design phase is where most of the "hard" bugs get prevented before they're ever written.
+Small project, but it touched a lot of real-world database engineering concepts: transactional integrity, cascading deletes, normalization trade-offs, and relational design for inheritance-like structures.
+Grateful for a team that made this fun to build. 
