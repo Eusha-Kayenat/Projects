@@ -1,12 +1,62 @@
-𝐏𝐞𝐭𝐯𝐞𝐫𝐬𝐞, a full-stack Animal Welfare & Adoption Platform built for our CSE370 (Database Systems) project at BRAC University.
-The idea was simple: animal adoption, donations, and community moderation are usually scattered across different platforms. 𝐏𝐞𝐭𝐯𝐞𝐫𝐬𝐞 brings them into one secure ecosystem, built with Node.js, Express, and MySQL, with JWT + bcrypt authentication and a relational schema that models real supertype-subtype relationships (Accounts → Users/Admins).
-My focus was on the donation system:
- 🔹 Time-bound donation campaigns with auto-calculated days-remaining logic
- 🔹 Real-time fund tracking: raised amount, target, and % funded
- 🔹 SQL transactions to keep balance deduction and campaign totals consistent even under concurrent donations
-Beyond my piece, the team built out a lot I'm proud to have shipped alongside:
- 🔹 Admin moderation + keyword-based post search 
- 🔹 Dynamic animal-type filtering + a personal wishlist system 
-We also took the schema all the way to 3NF and mapped the full ER/EER model before writing a line of backend code, a good reminder that the database design phase is where most of the "hard" bugs get prevented before they're ever written.
-Small project, but it touched a lot of real-world database engineering concepts: transactional integrity, cascading deletes, normalization trade-offs, and relational design for inheritance-like structures.
-Grateful for a team that made this fun to build. 
+# 🐾 Petverse — Animal Welfare & Adoption Platform
+
+> **CSE370: Database Systems Project** | BRAC University  
+> A full-stack, secure platform integrating animal adoption, targeted donation campaigns, and community moderation into a single relational ecosystem.
+
+---
+
+## 📌 Project Overview
+
+Animal welfare activities—such as pet adoption, fundraising, and community management—are often fragmented across different platforms. **Petverse** consolidates these workflows into one unified web application powered by a robust **MySQL** relational database and a **Node.js/Express** backend.
+
+The platform highlights advanced database engineering concepts, including supertype-subtype relational inheritance, full 3NF normalization, transactional integrity for monetary contributions, and efficient query optimization.
+
+---
+
+## 🌟 Key Features & Architecture
+
+### 💳 Donation & Campaign Management *(My Primary Contribution)*
+* **Time-Bound Campaigns:** Dynamic calculation of remaining days and active status at the query level.
+* **Real-Time Fund Tracking:** Instant metrics for total amount raised, financial targets, and percentage funded.
+* **Transactional Integrity:** SQL transactions (`START TRANSACTION`, `COMMIT`, `ROLLBACK`) ensure user balance deductions and campaign aggregate updates remain consistent—even under concurrent operations.
+
+### 🏠 Adoption & Community Features
+* **Dynamic Pet Filtering:** Multi-criteria search based on animal species, age, gender, and adoption status.
+* **Personal Wishlist:** Relational mapping allowing users to bookmark and track prospective pets.
+* **Admin Moderation & Search:** Keyword-based community post filtering alongside administrative controls for content management.
+
+### 🛡️ Authentication & Authorization
+* **JWT & bcrypt:** Token-based session management paired with salted password hashing.
+* **Role-Based Access Control (RBAC):** Schema-level separation between general Users and Administrators.
+
+---
+
+## 🗄️ Database Design Highlights
+
+* **Supertype / Subtype Inheritance:** Modeled an `Accounts` supertype table linked to `Users` and `Admins` subtypes via primary key / foreign key inheritance.
+* **Normalization (3NF):** Schema fully normalized to Third Normal Form (3NF) to eliminate insertion, update, and deletion anomalies.
+* **Referential Integrity:** Cascading deletes (`ON DELETE CASCADE`) and updates configured across dependent relations (e.g., Wishlists, Posts, Donations).
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** Node.js, Express.js
+* **Database:** MySQL
+* **Authentication:** JSON Web Tokens (JWT), bcrypt.js
+* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* [Node.js](https://nodejs.org/) (v16.x or higher)
+* [MySQL Server](https://www.mysql.com/) (v8.0 or higher)
+
+### Installation & Setup
+
+1. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/your-username/petverse.git](https://github.com/your-username/petverse.git)
+   cd petverse
